@@ -1,0 +1,15 @@
+These Fish Audio Materials are licensed under the Fish Audio Community License, Version 1.0. Copyright © 39 AI, INC. All Rights Reserved.
+
+src/salmon_fish/_vendor/fish_speech/ contains an inference subset of the upstream
+Fish Speech repository at commit 0f8a12e8a651062fdee9c33a894bdccd3a8513f1.
+Modification: Python imports and Hydra target paths have been relocated from
+fish_speech to salmon_fish._vendor.fish_speech to avoid package-name collisions.
+Model layers, sampling algorithms, and codec operations are unchanged.
+
+src/salmon_fish/ar.py adapts the upstream decode_one_token_ar orchestration to
+expose intermediate snapshots. Sampling order, RNG draws, KV operations, and
+returned frame layout are preserved. This adaptation retains the Fish Audio
+Community License. Its observation API and tests are added by salmon-fish.
+
+Other integration code outside _vendor is Copyright (c) 2026 salmon-fish
+contributors, distributed under the MIT license in LICENSE.
